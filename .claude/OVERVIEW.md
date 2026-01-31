@@ -6,6 +6,12 @@ A clean, modern portfolio website for Bonsai Systems - a digital agency speciali
 
 ---
 
+## Values
+
+- Key point is that it is personalized and we create solutions exactly how the company wants
+- Many times there are people that want to start a business but there is overhead when it comes to designing a site or a digital product / MVP (where do you start)
+- We take care of the busy work so that businesses can focus on their business
+
 ## Design Philosophy
 
 ### Core Principles

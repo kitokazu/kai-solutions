@@ -173,3 +173,92 @@
 ::view-transition-new(logo) {
   animation: none;
 }
+
+/* Project shared element transitions */
+
+::view-transition-old(project-image-1),
+::view-transition-old(project-image-2),
+::view-transition-old(project-image-3),
+::view-transition-old(project-image-4) {
+  animation: morph-fade-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-new(project-image-1),
+::view-transition-new(project-image-2),
+::view-transition-new(project-image-3),
+::view-transition-new(project-image-4) {
+  animation: morph-fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Title transitions - smooth morph from card to page header */
+::view-transition-old(project-title-1),
+::view-transition-old(project-title-2),
+::view-transition-old(project-title-3),
+::view-transition-old(project-title-4) {
+  animation: title-morph-out 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-new(project-title-1),
+::view-transition-new(project-title-2),
+::view-transition-new(project-title-3),
+::view-transition-new(project-title-4) {
+  animation: title-morph-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* View transition group - controls the morph animation */
+::view-transition-group(project-image-1),
+::view-transition-group(project-image-2),
+::view-transition-group(project-image-3),
+::view-transition-group(project-image-4) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-group(project-title-1),
+::view-transition-group(project-title-2),
+::view-transition-group(project-title-3),
+::view-transition-group(project-title-4) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Keyframes for morph transitions */
+@keyframes morph-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes morph-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes title-morph-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes title-morph-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
