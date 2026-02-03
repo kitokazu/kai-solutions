@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kai Solutions | Web Development & Digital Solutions",
-    template: "%s | Kai Solutions",
+    default: "Bonsai Digital | Web Development & Digital Solutions",
+    template: "%s | Bonsai Digital",
   },
   description:
     "We build modern websites and digital solutions that help your business grow. Custom web development, UI/UX design, and digital transformation.",
@@ -30,18 +30,18 @@ export const metadata: Metadata = {
     "web design",
     "custom websites",
   ],
-  authors: [{ name: "Kai Solutions" }],
+  authors: [{ name: "Bonsai Digital" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Kai Solutions",
-    title: "Kai Solutions | Web Development & Digital Solutions",
+    siteName: "Bonsai Digital",
+    title: "Bonsai Digital | Web Development & Digital Solutions",
     description:
       "We build modern websites and digital solutions that help your business grow.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kai Solutions | Web Development & Digital Solutions",
+    title: "Bonsai Digital | Web Development & Digital Solutions",
     description:
       "We build modern websites and digital solutions that help your business grow.",
   },

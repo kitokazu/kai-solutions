@@ -14,10 +14,10 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             About Us
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-lg text-slate-600 leading-relaxed">
             We&apos;re a small team passionate about building exceptional digital
             experiences that help businesses grow.
           </p>
@@ -30,8 +30,8 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <h2 className="text-xl font-semibold tracking-tight">Our Approach</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-xl font-semibold tracking-tight text-slate-900">Our Approach</h2>
+            <p className="mt-4 text-slate-600 leading-relaxed">
               We believe in building things the right way. That means clean code,
               thoughtful design, and a focus on performance and accessibility. Every
               project starts with understanding your goals and ends with a solution
@@ -44,8 +44,8 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
           >
-            <h2 className="text-xl font-semibold tracking-tight">What We Do</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-xl font-semibold tracking-tight text-slate-900">What We Do</h2>
+            <p className="mt-4 text-slate-600 leading-relaxed">
               From concept to launch, we handle the full spectrum of web development.
               Custom websites, web applications, e-commerce platforms, and design
               systems. We use modern technologies to build fast, scalable, and
@@ -61,7 +61,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          <h2 className="text-xl font-semibold tracking-tight">Our Values</h2>
+          <h2 className="text-xl font-semibold tracking-tight text-slate-900">Our Values</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
@@ -79,13 +79,13 @@ export default function AboutPage() {
                 description:
                   "We build solutions that scale. Your investment today should continue to pay dividends as your business grows.",
               },
-            ].map((value, index) => (
+            ].map((value) => (
               <div
                 key={value.title}
-                className="rounded-lg border border-border bg-card p-6"
+                className="rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-emerald-200 hover:shadow-lg"
               >
-                <h3 className="font-semibold">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-semibold text-slate-900">{value.title}</h3>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                   {value.description}
                 </p>
               </div>

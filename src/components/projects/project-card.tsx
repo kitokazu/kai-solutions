@@ -20,10 +20,10 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     >
       <Link
         href={`/projects/${project.slug}`}
-        className="group block overflow-hidden rounded-lg border border-border bg-card transition-colors duration-200 hover:border-kai/30"
+        className="group block overflow-hidden rounded-xl border border-slate-200 bg-white transition-all duration-200 hover:border-emerald-200 hover:shadow-lg"
       >
         <div
-          className="relative aspect-[16/10] overflow-hidden bg-muted"
+          className="relative aspect-[16/10] overflow-hidden bg-slate-100"
           style={{ viewTransitionName: `project-image-${project.id}` }}
         >
           {project.images.hero ? (
@@ -34,8 +34,8 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
           ) : (
-            <div className="flex h-full items-center justify-center bg-gradient-to-br from-kai-muted to-muted">
-              <span className="text-4xl font-semibold text-kai/20">
+            <div className="flex h-full items-center justify-center bg-gradient-to-br from-emerald-50 to-slate-100">
+              <span className="text-4xl font-semibold text-emerald-200">
                 {project.title.charAt(0)}
               </span>
             </div>
@@ -43,20 +43,20 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
 
         <div className="p-5">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-slate-500">
             <span>{project.client}</span>
-            <span className="text-border">·</span>
+            <span className="text-slate-300">·</span>
             <span className="capitalize">{project.category.replace("-", " ")}</span>
           </div>
 
           <h3
-            className="mt-2 text-lg font-medium tracking-tight"
+            className="mt-2 text-lg font-medium tracking-tight text-slate-900"
             style={{ viewTransitionName: `project-title-${project.id}` }}
           >
             {project.title}
           </h3>
 
-          <p className="mt-1.5 text-sm text-muted-foreground line-clamp-2">
+          <p className="mt-1.5 text-sm text-slate-600 line-clamp-2">
             {project.description}
           </p>
 
@@ -64,13 +64,13 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             {project.techStack.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+                className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600"
               >
                 {tech}
               </span>
             ))}
             {project.techStack.length > 3 && (
-              <span className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
+              <span className="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
                 +{project.techStack.length - 3}
               </span>
             )}

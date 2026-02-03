@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Kai Solutions portfolio website - a digital agency site built with Next.js 16, featuring View Transitions API for smooth page navigation.
+Bonsai Digital portfolio website - a digital agency site built with Next.js 16, featuring View Transitions API for smooth page navigation.
 
 ## Commands
 
@@ -39,7 +39,7 @@ src/
 │   └── api/contact/route.ts # Contact form API endpoint
 ├── components/
 │   ├── ui/                # shadcn/ui + custom UI primitives
-│   ├── layout/            # Header, Footer, Container
+│   ├── layout/            # Header, Footer, Container, Logo
 │   ├── sections/          # Page sections (Hero, Services, etc.)
 │   └── projects/          # ProjectCard, ProjectGrid, ProjectDetail
 └── lib/
@@ -54,7 +54,7 @@ src/
 
 **Component Organization**:
 - `ui/` - Reusable, stateless UI primitives (Button, Card, Input)
-- `layout/` - App shell components
+- `layout/` - App shell components (Header, Footer, Logo, Container)
 - `sections/` - Homepage and page-specific sections
 - `projects/` - Project-related compound components
 
@@ -85,16 +85,18 @@ interface Project {
 
 ## Design System
 
-### Colors (Kai Theme)
-Forest green brand colors defined in `globals.css`:
-- `--kai`: Primary forest green (oklch 0.45 0.12 152)
-- `--kai-foreground`: Text on kai backgrounds
-- `--kai-muted`: Subtle green for backgrounds/accents
+### Colors
+Neutral monochrome theme with dark primary defined in `globals.css`:
+- `--primary`: Dark color (#030213) for buttons and emphasis
+- `--primary-foreground`: Light text on primary backgrounds
+- `--muted`: Subtle gray for backgrounds (#ececf0)
+- `--muted-foreground`: Secondary text (#717182)
+- `--accent`: Light accent for hover states (#e9ebef)
 
 Usage:
-- `bg-kai` / `text-kai` for primary brand elements
-- `bg-kai-muted` for subtle accent backgrounds
-- `border-kai/30` for hover states on cards/buttons
+- `bg-primary` / `text-primary` for primary brand elements
+- `bg-muted` for subtle accent backgrounds
+- `border-foreground/20` for hover states on cards/buttons
 
 ### Typography
 - Font: Geist Sans (headings + body)

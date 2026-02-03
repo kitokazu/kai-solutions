@@ -7,7 +7,7 @@ import { projects } from "@/lib/data/projects";
 
 export default function ProjectsPage() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-24 lg:py-32 bg-slate-50 min-h-screen">
       <Container>
         {/* Page header */}
         <motion.div
@@ -17,12 +17,12 @@ export default function ProjectsPage() {
           transition={{ duration: 0.4 }}
         >
           <h1
-            className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl"
+            className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
             style={{ viewTransitionName: "projects-title" }}
           >
             Our Work
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-lg text-slate-600 leading-relaxed">
             A selection of projects we&apos;ve delivered. Each one represents a
             unique challenge solved with thoughtful design and solid engineering.
           </p>
@@ -41,8 +41,8 @@ export default function ProjectsPage() {
                 key={filter}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   index === 0
-                    ? "bg-kai text-kai-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    ? "bg-emerald-600 text-white"
+                    : "bg-white text-slate-600 border border-slate-200 hover:border-emerald-200 hover:text-emerald-600"
                 }`}
               >
                 {filter}
@@ -60,8 +60,8 @@ export default function ProjectsPage() {
 
         {/* Empty state - for when there are no projects */}
         {projects.length === 0 && (
-          <div className="mt-12 rounded-lg border border-dashed border-border p-12 text-center">
-            <p className="text-muted-foreground">No projects to display yet.</p>
+          <div className="mt-12 rounded-xl border border-dashed border-slate-300 p-12 text-center">
+            <p className="text-slate-500">No projects to display yet.</p>
           </div>
         )}
       </Container>

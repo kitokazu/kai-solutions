@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
+import { Logo } from "./logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -32,7 +33,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
         isScrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          ? "bg-white/90 backdrop-blur-md border-b border-slate-200"
           : "bg-transparent"
       )}
       style={{ viewTransitionName: "header" }}
@@ -41,10 +42,11 @@ export function Header() {
         <nav className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-lg font-semibold tracking-tight text-foreground"
+            className="flex items-center gap-2 text-lg font-semibold tracking-tight text-slate-900"
             style={{ viewTransitionName: "logo" }}
           >
-            Kai Solutions
+            <Logo size={24} className="text-emerald-600" />
+            <span>Bonsai Digital</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -56,8 +58,8 @@ export function Header() {
                   className={cn(
                     "text-sm font-medium transition-colors duration-200",
                     pathname === link.href
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-emerald-600"
+                      : "text-slate-600 hover:text-slate-900"
                   )}
                 >
                   {link.label}
@@ -68,7 +70,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 -mr-2 text-foreground"
+            className="md:hidden p-2 -mr-2 text-slate-900"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -78,7 +80,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background">
+          <div className="md:hidden border-t border-slate-200 bg-white">
             <ul className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -87,8 +89,8 @@ export function Header() {
                     className={cn(
                       "block py-3 text-base font-medium transition-colors duration-200",
                       pathname === link.href
-                        ? "text-foreground"
-                        : "text-muted-foreground"
+                        ? "text-emerald-600"
+                        : "text-slate-600"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
