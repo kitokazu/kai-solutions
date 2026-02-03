@@ -137,7 +137,7 @@ export function Hero() {
         style={{
           backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
                            linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
-          backgroundSize: '64px 64px'
+          backgroundSize: "64px 64px",
         }}
       />
 
@@ -145,19 +145,6 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left content */}
           <div className="max-w-xl">
-            <motion.div
-              className="inline-flex items-center gap-2 rounded-full border border-kai/20 bg-kai-muted/50 px-3 py-1 text-sm text-kai"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-kai opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-kai" />
-              </span>
-              Now leveraging AI
-            </motion.div>
-
             <motion.h1
               className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
               initial={{ opacity: 0, y: 16 }}
