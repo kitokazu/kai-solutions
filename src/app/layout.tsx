@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -16,34 +11,37 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Bonsai Digital | Web Development & Digital Solutions",
+    default: "Bonsai Digital | Digital Craftsmanship",
     template: "%s | Bonsai Digital",
   },
   description:
-    "We build modern websites and digital solutions that help your business grow. Custom web development, UI/UX design, and digital transformation.",
+    "We cultivate your digital presence with care and precision. Custom web development, design, and digital solutions crafted in Japan for businesses worldwide.",
   keywords: [
     "web development",
     "digital agency",
+    "Japan",
     "React",
     "Next.js",
     "UI/UX design",
     "web design",
     "custom websites",
+    "bonsai",
+    "digital solutions",
   ],
   authors: [{ name: "Bonsai Digital" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Bonsai Digital",
-    title: "Bonsai Digital | Web Development & Digital Solutions",
+    title: "Bonsai Digital | Digital Craftsmanship from Japan",
     description:
-      "We build modern websites and digital solutions that help your business grow.",
+      "We cultivate your digital presence with care and precision. Custom solutions crafted for businesses worldwide.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bonsai Digital | Web Development & Digital Solutions",
+    title: "Bonsai Digital | Digital Craftsmanship from Japan",
     description:
-      "We build modern websites and digital solutions that help your business grow.",
+      "We cultivate your digital presence with care and precision.",
   },
   robots: {
     index: true,
@@ -58,9 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
-      >
+      <body className={`${geistMono.variable} antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

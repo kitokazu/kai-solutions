@@ -3,41 +3,29 @@ interface LogoProps {
   size?: number;
 }
 
-export function Logo({ className, size = 28 }: LogoProps) {
+export function Logo({ className, size = 32 }: LogoProps) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 100 120"
+      viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Pot - bottom tier */}
-      <path
-        d="M25 112 L30 120 L70 120 L75 112 Z"
-        fill="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      {/* Pot - top tier */}
-      <path
-        d="M20 104 L80 104 L80 112 L20 112 Z"
-        fill="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      {/* Bonsai tree with subtle tech/circuit aesthetic */}
 
-      {/* Main trunk - curved path from pot up */}
+      {/* Pot */}
+      <rect x="32" y="85" width="36" height="10" rx="2" fill="currentColor" opacity="0.9" />
+      <rect x="28" y="78" width="44" height="9" rx="2" fill="currentColor" />
+
+      {/* Main trunk - organic curve */}
       <path
-        d="M50 104
-           L50 85
-           Q50 75 45 70
-           L40 65
-           Q32 58 35 50
-           Q38 42 50 38
-           Q55 36 55 30
-           L55 22"
+        d="M50 78
+           C50 72 48 68 47 62
+           C46 56 44 50 46 44
+           C48 38 52 34 54 28
+           C56 22 54 18 52 14"
         stroke="currentColor"
         strokeWidth="5"
         fill="none"
@@ -45,63 +33,68 @@ export function Logo({ className, size = 28 }: LogoProps) {
         strokeLinejoin="round"
       />
 
-      {/* Upper right branch */}
+      {/* Left branch */}
       <path
-        d="M55 30 Q60 28 65 28"
+        d="M47 58 C40 56 34 58 26 54"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="4"
         fill="none"
         strokeLinecap="round"
       />
 
-      {/* Top foliage lines - right side */}
-      <path d="M55 22 L90 22" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M65 28 L85 28" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M92 22 L97 22" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-
-      {/* Top foliage lines - left side */}
-      <path d="M55 22 Q48 22 42 22 L10 22" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M42 28 L20 28" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M5 22 L8 22" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-
-      {/* Middle branch going left */}
+      {/* Right branch */}
       <path
-        d="M42 45 Q35 45 30 45"
+        d="M48 44 C56 42 64 44 72 40"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="3.5"
         fill="none"
         strokeLinecap="round"
       />
 
-      {/* Middle foliage lines - left */}
-      <path d="M30 45 L5 45" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M25 51 L12 51" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-
-      {/* Middle-right branch */}
+      {/* Upper left branch */}
       <path
-        d="M50 38 Q58 38 65 40"
+        d="M52 32 C44 30 36 32 28 28"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="3"
         fill="none"
         strokeLinecap="round"
       />
 
-      {/* Middle foliage lines - right */}
-      <path d="M65 40 L95 40" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M70 46 L88 46" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-
-      {/* Lower left branch */}
+      {/* Top branch */}
       <path
-        d="M40 65 Q32 68 25 68"
+        d="M52 14 C48 12 42 14 36 12"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="2.5"
         fill="none"
         strokeLinecap="round"
       />
 
-      {/* Lower foliage lines - left */}
-      <path d="M25 68 L8 68" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M20 74 L28 74" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+      {/* Foliage clouds - layered organic shapes */}
+      {/* Top foliage */}
+      <ellipse cx="44" cy="12" rx="22" ry="10" fill="currentColor" opacity="0.12" />
+      <ellipse cx="44" cy="12" rx="16" ry="7" fill="currentColor" opacity="0.2" />
+
+      {/* Upper left foliage */}
+      <ellipse cx="28" cy="26" rx="18" ry="10" fill="currentColor" opacity="0.12" />
+      <ellipse cx="28" cy="26" rx="12" ry="6" fill="currentColor" opacity="0.2" />
+
+      {/* Right foliage */}
+      <ellipse cx="72" cy="38" rx="16" ry="10" fill="currentColor" opacity="0.12" />
+      <ellipse cx="72" cy="38" rx="10" ry="6" fill="currentColor" opacity="0.2" />
+
+      {/* Left lower foliage */}
+      <ellipse cx="26" cy="52" rx="18" ry="10" fill="currentColor" opacity="0.12" />
+      <ellipse cx="26" cy="52" rx="12" ry="6" fill="currentColor" opacity="0.2" />
+
+      {/* Small decorative dots - subtle tech hint */}
+      <circle cx="36" cy="12" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="52" cy="12" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="20" cy="26" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="36" cy="26" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="64" cy="38" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="80" cy="38" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="18" cy="52" r="1.5" fill="currentColor" opacity="0.4" />
+      <circle cx="34" cy="52" r="1.5" fill="currentColor" opacity="0.4" />
     </svg>
   );
 }

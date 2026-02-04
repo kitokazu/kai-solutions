@@ -10,7 +10,7 @@ import { Logo } from "./logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -31,9 +31,9 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-slate-200"
+          ? "bg-background/90 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       )}
       style={{ viewTransitionName: "header" }}
@@ -42,11 +42,13 @@ export function Header() {
         <nav className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 text-lg font-semibold tracking-tight text-slate-900"
+            className="group flex items-center gap-2.5"
             style={{ viewTransitionName: "logo" }}
           >
-            <Logo size={24} className="text-emerald-600" />
-            <span>Bonsai Digital</span>
+            <Logo size={32} className="text-primary transition-transform duration-300 group-hover:scale-105" />
+            <span className="text-lg font-semibold tracking-tight text-foreground">
+              Bonsai Digital
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,8 +60,8 @@ export function Header() {
                   className={cn(
                     "text-sm font-medium transition-colors duration-200",
                     pathname === link.href
-                      ? "text-emerald-600"
-                      : "text-slate-600 hover:text-slate-900"
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {link.label}
@@ -68,19 +70,34 @@ export function Header() {
             ))}
           </ul>
 
+          {/* CTA */}
+          <div className="hidden md:flex items-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5"
+            >
+              Start a Project
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 -mr-2 text-slate-900"
+            className="md:hidden p-2 -mr-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 bg-white">
+        <div
+          className={cn(
+            "md:hidden overflow-hidden transition-all duration-300",
+            isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          )}
+        >
+          <div className="border-t border-border bg-background/95 backdrop-blur-xl">
             <ul className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -89,8 +106,8 @@ export function Header() {
                     className={cn(
                       "block py-3 text-base font-medium transition-colors duration-200",
                       pathname === link.href
-                        ? "text-emerald-600"
-                        : "text-slate-600"
+                        ? "text-primary"
+                        : "text-muted-foreground"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -98,9 +115,18 @@ export function Header() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-4 mt-2 border-t border-border">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center w-full rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Start a Project
+                </Link>
+              </li>
             </ul>
           </div>
-        )}
+        </div>
       </Container>
     </header>
   );

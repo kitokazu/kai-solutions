@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg";
 }
 
@@ -12,19 +12,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           {
-            "bg-emerald-600 text-white hover:bg-emerald-700":
+            "bg-primary text-primary-foreground hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5":
               variant === "primary",
-            "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50":
+            "bg-secondary text-secondary-foreground hover:bg-secondary/80":
               variant === "secondary",
-            "hover:bg-slate-100 text-slate-900":
+            "hover:bg-muted text-foreground":
               variant === "ghost",
+            "border border-border bg-white text-foreground hover:border-primary/20 hover:bg-secondary/50":
+              variant === "outline",
           },
           {
-            "h-9 px-4 text-sm rounded-md": size === "sm",
-            "h-11 px-6 text-base rounded-md": size === "md",
-            "h-12 px-8 text-base rounded-md": size === "lg",
+            "h-8 px-3 text-xs rounded-lg": size === "sm",
+            "h-10 px-4 text-sm rounded-lg": size === "md",
+            "h-12 px-6 text-sm rounded-lg": size === "lg",
           },
           className
         )}
